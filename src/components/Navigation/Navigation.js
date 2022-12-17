@@ -18,7 +18,7 @@ const Navigation = () => {
 
     return (
         <nav className={styles.navigation}>
-            <NavLink to={'/'} className={styles.logo}>
+            <NavLink to={'/react-store'} className={styles.logo}>
                 <LogoIcon />
             </NavLink>
             <div className={styles.menu}>

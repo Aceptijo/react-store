@@ -17,7 +17,7 @@ function App() {
             </header>
             <main className={styles.main}>
                 <Routes>
-                    <Route path={'/'} element={<HomePage />} />
+                    <Route path={'/react-store'} element={<HomePage />} />
                     <Route path={'/bag'} element={<BagPage />} />
                     <Route path={'/saved'} element={<SavedPage />} />
                     <Route path={'/login'} element={<LoginPage />} />
