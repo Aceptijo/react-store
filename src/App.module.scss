@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body {
+    background: #323437;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    width: 7px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #2c2e31;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #d29839;
+    border-radius: 5px;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    background: #2c2e31;
+    border-bottom: 1px solid #3d3d3d;
+    z-index: 404;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background: #2c2e31;
+}

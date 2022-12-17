@@ -1,0 +1,93 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    font-size: 18px;
+    a {
+        text-decoration: none;
+        color: #d1d0c5;
+    }
+}
+
+.logo {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-right: 100px;
+    a {
+        font-size: 18px;
+        &:hover {
+            transition: 0.2s;
+            color: #d29839;
+        }
+    }
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    span {
+        color: #d1d0c5;
+    }
+}
+
+.number {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    color: #d1d0c5;
+    &:hover {
+        transition: 0.2s;
+        color: #d29839;
+        svg {
+            transition: 0.2s;
+            fill: #d29839;
+        }
+    }
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 100px;
+    cursor: pointer;
+    &:hover {
+        a {
+            transition: 0.2s;
+            color: #d29839;
+        }
+        svg {
+            transition: 0.2s;
+            fill: #d29839;
+        }
+    }
+}
+
+.bag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    &:hover {
+        a {
+            transition: 0.2s;
+            color: #d29839;
+        }
+        svg {
+            transition: 0.2s;
+            fill: #d29839;
+        }
+    }
+}

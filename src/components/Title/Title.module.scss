@@ -1,0 +1,14 @@
+.title {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    gap: 20px;
+    color: #d1d0c5;
+    svg {
+        cursor: pointer;
+        &:hover {
+            transition: 0.2s;
+            fill: #d29839;
+        }
+    }
+}

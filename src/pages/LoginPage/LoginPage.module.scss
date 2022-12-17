@@ -1,0 +1,16 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: #d29839;
+    height: 100vh;
+    a {
+        text-decoration: none;
+        color: #d29839;
+        &:hover {
+            color: #9a6e22;
+        }
+    }
+}

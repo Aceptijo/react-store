@@ -1,0 +1,82 @@
+.card {
+    position: relative;
+    width: 236px;
+    height: 335px;
+    background: #505050;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    transition: 0.2s;
+    &:hover {
+        box-shadow: 0px 0px 5px 0px #d29839;
+        transition: 0.2s;
+    }
+    svg {
+        cursor: pointer;
+    }
+}
+
+.name {
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn {
+    width: 100%;
+    background: #262626;
+    border: 1px solid #d29839;
+    border-radius: 10px;
+    padding: 14px;
+    cursor: pointer;
+    &:hover {
+        background: #111111;
+    }
+}
+
+.active {
+    width: 100%;
+    background: #d29839;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.full {
+    fill: #d29839;
+    &:hover {
+        cursor: not-allowed;
+    }
+}
+
+.empty {
+    &:hover {
+        fill: #111111;
+    }
+}
+
+.like {
+    background: inherit;
+    border: none;
+    width: 100%;
+    text-align: end;
+}
+
+.block {
+    background: inherit;
+    border: none;
+    width: 100%;
+    text-align: end;
+    &:hover {
+        cursor: not-allowed;
+    }
+}

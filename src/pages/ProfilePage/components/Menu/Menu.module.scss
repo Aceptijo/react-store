@@ -1,0 +1,26 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 1px solid #3d3d3d;
+    border-radius: 15px;
+    overflow: hidden;
+    height: min-content;
+    a {
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+.active {
+    width: 100%;
+    padding: 35px;
+    border-bottom: 1px solid #3d3d3d;
+    background: #d29839;
+}
+
+.inactive {
+    width: 100%;
+    padding: 35px;
+    background: #2c2e31;
+}
