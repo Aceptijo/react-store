@@ -1,9 +1,12 @@
 import React from 'react';
 import styles from './BagItem.module.scss';
-import { decrement, increment, removeItem } from '../../../../store/slices/bagSlice';
+import {
+    decrement,
+    increment,
+    removeItem,
+} from '../../../../store/slices/bagSlice';
 import { useDispatch } from 'react-redux';
 import { changeSelectedStatus } from '../../../../store/slices/cardsSlice';
-import { changeSelectedStatusForSaved } from '../../../../store/slices/savedSlice';
 
 const BagItem = ({ item }) => {
     const dispatch = useDispatch();
@@ -21,8 +24,9 @@ const BagItem = ({ item }) => {
     const remove = () => {
         dispatch(removeItem(item));
         dispatch(changeSelectedStatus(item));
-        dispatch(changeSelectedStatusForSaved(item));
     };
+
+    // todo: разобраться со сменой статусов в сохранённых
 
     return (
         <li className={styles.card}>

@@ -5,16 +5,19 @@ import { ReactComponent as LogoIcon } from './images/logo.svg';
 import { ReactComponent as PhoneIcon } from './images/phone.svg';
 import { ReactComponent as UserIcon } from './images/user.svg';
 import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../hooks/use-auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase';
 
 const Navigation = () => {
-    const { isAuth, login } = useAuth();
+    // const { isAuth, login } = useAuth();
 
-    const concatNickName = () => {
-        const str = String(login);
-        const pos = str.indexOf('@');
-        return str.slice(0, pos);
-    };
+    // const concatNickName = () => {
+    //     const str = String(login);
+    //     const pos = str.indexOf('@');
+    //     return str.slice(0, pos);
+    // };
+
+    const [user] = useAuthState(auth);
 
     return (
         <nav className={styles.navigation}>
@@ -36,10 +39,10 @@ const Navigation = () => {
             </div>
             <div className={styles.user}>
                 <UserIcon />
-                {isAuth ? (
-                    <NavLink to={'/profile'}>{concatNickName()}</NavLink>
+                {user ? (
+                    <NavLink to={'/profile'}>{user.displayName}</NavLink>
                 ) : (
-                    <NavLink to={'/login'}>Account</NavLink>
+                    <NavLink to={'/login'}>Sign In</NavLink>
                 )}
             </div>
             <div className={styles.bag}>

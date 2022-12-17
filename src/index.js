@@ -5,12 +5,15 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './store/store';
 import './firebase';
+import { AuthProvider } from './context/GoogleAuthContext/GoogleAuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
+        <AuthProvider>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </AuthProvider>
     </BrowserRouter>
 );

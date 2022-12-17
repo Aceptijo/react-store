@@ -4,7 +4,10 @@ import { ReactComponent as LikeIcon } from '../../../../assets/images/favourites
 import { addItem } from '../../../../store/slices/bagSlice';
 import { useDispatch } from 'react-redux';
 import { addSavedItem } from '../../../../store/slices/savedSlice';
-import { changeSavedStatus, changeSelectedStatus } from '../../../../store/slices/cardsSlice';
+import {
+    changeSavedStatus,
+    changeSelectedStatus,
+} from '../../../../store/slices/cardsSlice';
 
 const Card = ({ card }) => {
     const dispatch = useDispatch();
@@ -26,7 +29,9 @@ const Card = ({ card }) => {
                 onClick={addToSavedList}
                 disabled={card.isSaved}
             >
-                <LikeIcon className={card.isSaved ? styles.full : styles.empty} />
+                <LikeIcon
+                    className={card.isSaved ? styles.full : styles.empty}
+                />
             </button>
             <span className={styles.name}>{card.name}</span>
             <span className={styles.name}>{`$${Number(card.price)}`}</span>

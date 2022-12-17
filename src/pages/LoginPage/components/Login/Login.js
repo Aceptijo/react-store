@@ -1,19 +1,24 @@
 import React from 'react';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../../../../store/slices/userSlice';
 import Form from '../../../../components/Form/Form';
+import { useGoogleAuth } from '../../../../context/GoogleAuthContext/GoogleAuthContext';
 import { useNavigate } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../../../firebase';
+import { setUser } from '../../../../store/slices/userSlice';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const { googleSignIn } = useGoogleAuth();
 
-    const handleClick = (login, password) => {
-        const auth = getAuth();
+    const handleGoogleSignIn = () => {
+        googleSignIn();
+    };
+
+    const handleEmailSignIn = (login, password) => {
         signInWithEmailAndPassword(auth, login, password)
             .then(({ user }) => {
-                console.log(user);
                 dispatch(
                     setUser({
                         login: user.email,
@@ -21,12 +26,18 @@ const Login = () => {
                         token: user.accessToken,
                     })
                 );
-                navigate('/');
+                navigate('/react-store');
             })
             .catch((error) => error.message);
     };
 
-    return <Form title={'Sign In'} handleClick={handleClick} />;
+    return (
+        <Form
+            title={'Sign In'}
+            emailAuth={handleEmailSignIn}
+            googleAuth={handleGoogleSignIn}
+        />
+    );
 };
 
 export default Login;

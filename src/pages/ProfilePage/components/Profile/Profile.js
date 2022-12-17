@@ -4,11 +4,16 @@ import Menu from '../Menu/Menu';
 import Title from '../../../../components/Title/Title';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as ExitIcon } from './exit.svg';
-import { useDispatch } from 'react-redux';
-import { removeUser } from '../../../../store/slices/userSlice';
+import { useGoogleAuth } from '../../../../context/GoogleAuthContext/GoogleAuthContext';
 
 const Profile = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
+
+    const { googleLogOut } = useGoogleAuth();
+
+    const handleGoogleLogOut = () => {
+        googleLogOut();
+    };
 
     return (
         <div className={styles.container}>
@@ -34,7 +39,11 @@ const Profile = () => {
                         <span>Minsk</span>
                     </div>
                     <div className={styles.exit}>
-                        <NavLink to={'/'} onClick={() => dispatch(removeUser())}>
+                        <NavLink
+                            to={'/react-store'}
+                            // onClick={() => dispatch(removeUser())}
+                            onClick={handleGoogleLogOut}
+                        >
                             Log out
                             <ExitIcon />
                         </NavLink>

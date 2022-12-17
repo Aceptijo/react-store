@@ -20,8 +20,9 @@ const SignUp = () => {
                         token: user.accessToken,
                     })
                 );
-                navigate('/');
+                navigate('/react-store');
             })
+
             .catch((error) => error.message);
     };
 

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Form.module.scss';
+import { ReactComponent as GoogleIcon } from './google.svg';
 
-const Form = ({ title, handleClick }) => {
+const Form = ({ title, emailAuth, googleAuth }) => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
@@ -23,9 +24,13 @@ const Form = ({ title, handleClick }) => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder={'Password'}
             />
-            <button onClick={() => handleClick(login, password)}>
-                {title}
-            </button>
+            <button onClick={() => emailAuth(login, password)}>{title}</button>
+            {title === 'Sign In' && (
+                <button onClick={googleAuth} className={styles.google}>
+                    <GoogleIcon />
+                    Sign in with Google
+                </button>
+            )}
         </form>
     );
 };
