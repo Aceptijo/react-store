@@ -9,14 +9,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase';
 
 const Navigation = () => {
-    // const { isAuth, login } = useAuth();
-
-    // const concatNickName = () => {
-    //     const str = String(login);
-    //     const pos = str.indexOf('@');
-    //     return str.slice(0, pos);
-    // };
-
     const [user] = useAuthState(auth);
 
     return (
@@ -39,8 +31,10 @@ const Navigation = () => {
             </div>
             <div className={styles.user}>
                 <UserIcon />
-                {user ? (
-                    <NavLink to={'/profile'}>{user.displayName}</NavLink>
+                {!!user ? (
+                    <NavLink to={'/profile'}>
+                        {user.email.slice(0, user.email.indexOf('@'))}
+                    </NavLink>
                 ) : (
                     <NavLink to={'/login'}>Sign In</NavLink>
                 )}

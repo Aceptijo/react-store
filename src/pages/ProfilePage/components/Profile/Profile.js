@@ -4,16 +4,11 @@ import Menu from '../Menu/Menu';
 import Title from '../../../../components/Title/Title';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as ExitIcon } from './exit.svg';
-import { useGoogleAuth } from '../../../../context/GoogleAuthContext/GoogleAuthContext';
+import { useSignOut } from 'react-firebase-hooks/auth';
+import { auth } from '../../../../firebase';
 
 const Profile = () => {
-    // const dispatch = useDispatch();
-
-    const { googleLogOut } = useGoogleAuth();
-
-    const handleGoogleLogOut = () => {
-        googleLogOut();
-    };
+    const [signOut] = useSignOut(auth);
 
     return (
         <div className={styles.container}>
@@ -41,8 +36,12 @@ const Profile = () => {
                     <div className={styles.exit}>
                         <NavLink
                             to={'/react-store'}
-                            // onClick={() => dispatch(removeUser())}
-                            onClick={handleGoogleLogOut}
+                            onClick={async () => {
+                                const success = signOut();
+                                if (success) {
+                                    alert('You are sign out');
+                                }
+                            }}
                         >
                             Log out
                             <ExitIcon />

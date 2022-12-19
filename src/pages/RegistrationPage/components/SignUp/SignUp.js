@@ -1,32 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import Form from '../../../../components/Form/Form';
-import { useDispatch } from 'react-redux';
-import { setUser } from '../../../../store/slices/userSlice';
+import { useAuth } from '../../../../context/AuthContext/AuthContext';
 
 const SignUp = () => {
-    const dispatch = useDispatch();
-    const navigate = useNavigate();
+    const { emailSignUp } = useAuth();
 
-    const handleRegister = (login, password) => {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, login, password)
-            .then(({ user }) => {
-                dispatch(
-                    setUser({
-                        login: user.email,
-                        id: user.uid,
-                        token: user.accessToken,
-                    })
-                );
-                navigate('/react-store');
-            })
-
-            .catch((error) => error.message);
+    const handleEmailSignUp = (email, password) => {
+        emailSignUp(email, password);
     };
 
-    return <Form title={'Sign up'} handleClick={handleRegister} />;
+    return <Form title={'Sign up'} emailSignUp={handleEmailSignUp} />;
 };
 
 export default SignUp;

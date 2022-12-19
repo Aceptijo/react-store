@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import styles from './Form.module.scss';
 import { ReactComponent as GoogleIcon } from './google.svg';
 
-const Form = ({ title, emailAuth, googleAuth }) => {
-    const [login, setLogin] = useState('');
+const Form = ({ title, emailSignUp, googleSignIn, emailSignIn }) => {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event) => {
@@ -14,8 +14,8 @@ const Form = ({ title, emailAuth, googleAuth }) => {
         <form onSubmit={handleSubmit} className={styles.container}>
             <input
                 type="text"
-                value={login}
-                onChange={(event) => setLogin(event.target.value)}
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
                 placeholder={'Email'}
             />
             <input
@@ -24,9 +24,17 @@ const Form = ({ title, emailAuth, googleAuth }) => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder={'Password'}
             />
-            <button onClick={() => emailAuth(login, password)}>{title}</button>
+            <button
+                onClick={
+                    title === 'Sign In'
+                        ? () => emailSignIn(email, password)
+                        : () => emailSignUp(email, password)
+                }
+            >
+                {title}
+            </button>
             {title === 'Sign In' && (
-                <button onClick={googleAuth} className={styles.google}>
+                <button onClick={googleSignIn} className={styles.google}>
                     <GoogleIcon />
                     Sign in with Google
                 </button>

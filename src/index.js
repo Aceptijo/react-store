@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { store } from './store/store';
 import './firebase';
-import { AuthProvider } from './context/GoogleAuthContext/GoogleAuthContext';
+import { AuthProvider } from './context/AuthContext/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
