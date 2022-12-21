@@ -1,5 +1,10 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import {
+    getAuth,
+    GoogleAuthProvider,
+    FacebookAuthProvider,
+    GithubAuthProvider,
+} from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,4 +16,16 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
+
+export const googleProvider = new GoogleAuthProvider();
+
+export const metaProvider = new FacebookAuthProvider();
+
+export const gitHubProvider = new GithubAuthProvider();
+
+export const actionCodeConfig = {
+    url: 'http://localhost:3000/react-store',
+    handleCodeInApp: true,
+};

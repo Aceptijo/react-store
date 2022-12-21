@@ -1,10 +1,32 @@
 import React, { useState } from 'react';
 import styles from './Form.module.scss';
-import { ReactComponent as GoogleIcon } from './google.svg';
+import { useAuth } from '../../context/AuthContext/AuthContext';
+import {
+    Button,
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    TextField,
+} from '@mui/material';
 
-const Form = ({ title, emailSignUp, googleSignIn, emailSignIn }) => {
+const Form = () => {
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [open, setOpen] = useState(false);
+    const { signInByProvider, sendLinkToEmail } = useAuth();
+
+    const providers = ['Google', 'Meta', 'GitHub'];
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        sendLinkToEmail(email);
+        setEmail('');
+        setOpen(false);
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -12,33 +34,42 @@ const Form = ({ title, emailSignUp, googleSignIn, emailSignIn }) => {
 
     return (
         <form onSubmit={handleSubmit} className={styles.container}>
-            <input
-                type="text"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder={'Email'}
-            />
-            <input
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                placeholder={'Password'}
-            />
-            <button
-                onClick={
-                    title === 'Sign In'
-                        ? () => emailSignIn(email, password)
-                        : () => emailSignUp(email, password)
-                }
-            >
-                {title}
-            </button>
-            {title === 'Sign In' && (
-                <button onClick={googleSignIn} className={styles.google}>
-                    <GoogleIcon />
-                    Sign in with Google
-                </button>
-            )}
+            <Button variant="contained" onClick={handleClickOpen}>
+                {'Sign in with Link'}
+            </Button>
+            <Dialog open={open} onClose={handleClose}>
+                <DialogTitle>Subscribe</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        To subscribe to this website, please enter your email
+                        address here. We will send updates occasionally.
+                    </DialogContentText>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Email Address"
+                        type="email"
+                        fullWidth
+                        variant="standard"
+                        value={email}
+                        onChange={(event) => setEmail(event.target.value)}
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClose}>Cancel</Button>
+                    <Button onClick={handleClose}>Subscribe</Button>
+                </DialogActions>
+            </Dialog>
+            {providers.map((provider) => (
+                <Button
+                    variant="contained"
+                    key={provider}
+                    onClick={() => signInByProvider(provider)}
+                >
+                    {`Sign in with ${provider}`}
+                </Button>
+            ))}
         </form>
     );
 };

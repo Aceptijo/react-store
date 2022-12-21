@@ -5,11 +5,10 @@ import { ReactComponent as LogoIcon } from './images/logo.svg';
 import { ReactComponent as PhoneIcon } from './images/phone.svg';
 import { ReactComponent as UserIcon } from './images/user.svg';
 import { NavLink } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from '../../firebase';
+import { useAuth } from '../../context/AuthContext/AuthContext';
 
 const Navigation = () => {
-    const [user] = useAuthState(auth);
+    const { user } = useAuth();
 
     return (
         <nav className={styles.navigation}>
@@ -31,7 +30,7 @@ const Navigation = () => {
             </div>
             <div className={styles.user}>
                 <UserIcon />
-                {!!user ? (
+                {user ? (
                     <NavLink to={'/profile'}>
                         {user.email.slice(0, user.email.indexOf('@'))}
                     </NavLink>

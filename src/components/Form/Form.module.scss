@@ -17,20 +17,13 @@
         }
     }
     button {
-        color: #d1d0c5;
-        font-size: 20px;
         background: #2c2e31;
-        border: none;
-        padding: 15px;
+        color: #d1d0c5;
         border-radius: 10px;
         cursor: pointer;
         caret-color: #2c2e31;
         &:hover {
-            background: #d1d0c5;
-            color: #2c2e31;
-        }
-        &:active {
-            background: #646669;
+            background: #d29839;
             color: #2c2e31;
         }
     }
