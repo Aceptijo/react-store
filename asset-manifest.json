@@ -1,23 +1,30 @@
 {
   "files": {
-    "main.css": "/react-store/static/css/main.55ccdcc8.css",
-    "main.js": "/react-store/static/js/main.ff3003f0.js",
+    "main.css": "/react-store/static/css/main.392c054c.css",
+    "main.js": "/react-store/static/js/main.f9481de5.js",
     "static/media/logo.svg": "/react-store/static/media/logo.a90b433cc7bb9df98aa767ba6a62967c.svg",
+    "static/media/mastercardico.svg": "/react-store/static/media/mastercardico.1e87384d57b62f4e3177f16b8f7bafb6.svg",
+    "static/media/maestroico.svg": "/react-store/static/media/maestroico.0ca48fc3aa666cb7299b2d70abb96c85.svg",
     "static/media/bagsvg.svg": "/react-store/static/media/bagsvg.87b4164edb9f33b34ba3eaf7c03a6791.svg",
     "static/media/instagram.svg": "/react-store/static/media/instagram.d11e3fece53263a92c400599a22b1f95.svg",
+    "static/media/google.svg": "/react-store/static/media/google.3e03081b04dc92edca2ee696cc874aa7.svg",
+    "static/media/visaico.svg": "/react-store/static/media/visaico.1b206f336379da407d788f257be0709d.svg",
     "static/media/vk.svg": "/react-store/static/media/vk.e2fd931ec25b4a864bcd9c34393df596.svg",
     "static/media/phone.svg": "/react-store/static/media/phone.09c90a57844f1b050d8cea72a6d3dc4e.svg",
+    "static/media/github.svg": "/react-store/static/media/github.3b33a906b03a6cd6d12f735eba6fa914.svg",
     "index.html": "/react-store/index.html",
     "static/media/favouritesvg.svg": "/react-store/static/media/favouritesvg.5d3ad90e706129895ec66f5d5fec7a8d.svg",
     "static/media/telegram.svg": "/react-store/static/media/telegram.460eb47406dde1fedb01cbb4a39ceebc.svg",
     "static/media/edit.svg": "/react-store/static/media/edit.2deeef93529c1710504f2a80ccee4146.svg",
+    "static/media/facebook.svg": "/react-store/static/media/facebook.d685eee19ae4535afc8cb7eb3581905e.svg",
     "static/media/bag.svg": "/react-store/static/media/bag.0b28650bd8746e498ad2e8e787441136.svg",
     "static/media/user.svg": "/react-store/static/media/user.99db0139e9230bc193c43d12a8654f52.svg",
-    "main.55ccdcc8.css.map": "/react-store/static/css/main.55ccdcc8.css.map",
-    "main.ff3003f0.js.map": "/react-store/static/js/main.ff3003f0.js.map"
+    "static/media/mail.svg": "/react-store/static/media/mail.aed41df235dbf88c7f96b2b704b077d0.svg",
+    "main.392c054c.css.map": "/react-store/static/css/main.392c054c.css.map",
+    "main.f9481de5.js.map": "/react-store/static/js/main.f9481de5.js.map"
   },
   "entrypoints": [
-    "static/css/main.55ccdcc8.css",
-    "static/js/main.ff3003f0.js"
+    "static/css/main.392c054c.css",
+    "static/js/main.f9481de5.js"
   ]
 }
