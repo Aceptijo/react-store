@@ -5,20 +5,14 @@ import Navigation from './components/Navigation/Navigation';
 import SavedPage from './pages/SavedPage/SavedPage';
 import BagPage from './pages/BagPage/BagPage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import Information from './components/Information/Information';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from './firebase';
-import Loader from './components/Loader/Loader';
+import ContactsPage from './pages/ContactsPage/ContactsPage';
+import PaymentPage from './pages/PaymentPage/PaymentPage';
+import DeliveryPage from './pages/Delivery/DeliveryPage';
+import ShopsPage from './pages/ShopsPage/ShopsPage';
 
 function App() {
-    const [_, loading] = useAuthState(auth);
-
-    if (loading) {
-        return <Loader />;
-    }
-
     return (
         <>
             <header className={styles.header}>
@@ -30,11 +24,11 @@ function App() {
                     <Route path={'/bag'} element={<BagPage />} />
                     <Route path={'/saved'} element={<SavedPage />} />
                     <Route path={'/login'} element={<LoginPage />} />
-                    <Route
-                        path={'/registration'}
-                        element={<RegistrationPage />}
-                    />
                     <Route path={'/profile'} element={<ProfilePage />} />
+                    <Route path={'/contacts'} element={<ContactsPage />} />
+                    <Route path={'/payment'} element={<PaymentPage />} />
+                    <Route path={'/delivery'} element={<DeliveryPage />} />
+                    <Route path={'/shops'} element={<ShopsPage />} />
                 </Routes>
             </main>
             <footer className={styles.footer}>

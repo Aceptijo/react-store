@@ -27,8 +27,14 @@ export const AuthProvider = ({ children }) => {
     };
 
     const signInByGoogle = () => signInWithPopup(auth, googleProvider);
-    const signInByMeta = () => signInWithPopup(auth, metaProvider);
-    const signInByGitHub = () => signInWithPopup(auth, gitHubProvider);
+    const signInByMeta = () =>
+        signInWithPopup(auth, metaProvider).catch((error) =>
+            alert(error.message)
+        );
+    const signInByGitHub = () =>
+        signInWithPopup(auth, gitHubProvider).catch((error) =>
+            alert(error.message)
+        );
 
     const signInByProvider = (provider) => {
         switch (provider) {

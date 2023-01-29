@@ -1,0 +1,56 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #d29839;
+    border: 1px solid #d29839;
+    border-radius: 15px;
+    background: inherit;
+    font-size: 24px;
+    padding: 30px 40px;
+    width: 500px;
+}
+
+.active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #d29839;
+    border: 1px solid #d29839;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background: inherit;
+    font-size: 24px;
+    padding: 30px 40px;
+    width: 500px;
+}
+
+.plus {
+    color: #d29839;
+    font-size: 18px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d29839;
+    border-radius: 15px;
+    padding: 20px 40px;
+    gap: 10px;
+    width: 500px;
+    color: #d1d0c5;
+}
+
+.listActive {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d29839;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    padding: 20px 40px;
+    gap: 10px;
+    width: 500px;
+    span {
+        color: #d1d0c5;
+    }
+}

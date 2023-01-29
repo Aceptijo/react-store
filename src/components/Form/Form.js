@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Form.module.scss';
+import { ReactComponent as GoogleIcon } from './google.svg';
+import { ReactComponent as GitHubIcon } from './github.svg';
+import { ReactComponent as FaceBookIcon } from './facebook.svg';
+import { ReactComponent as MailIcon } from './mail.svg';
 import { useAuth } from '../../context/AuthContext/AuthContext';
 import {
     Button,
@@ -18,6 +22,12 @@ const Form = () => {
 
     const providers = ['Google', 'Meta', 'GitHub'];
 
+    const icons = {
+        [providers[0]]: <GoogleIcon />,
+        [providers[1]]: <FaceBookIcon />,
+        [providers[2]]: <GitHubIcon />,
+    };
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -34,7 +44,11 @@ const Form = () => {
 
     return (
         <form onSubmit={handleSubmit} className={styles.container}>
-            <Button variant="contained" onClick={handleClickOpen}>
+            <Button
+                variant="contained"
+                onClick={handleClickOpen}
+                startIcon={<MailIcon />}
+            >
                 {'Sign in with Link'}
             </Button>
             <Dialog open={open} onClose={handleClose}>
@@ -65,6 +79,7 @@ const Form = () => {
                 <Button
                     variant="contained"
                     key={provider}
+                    startIcon={icons[provider]}
                     onClick={() => signInByProvider(provider)}
                 >
                     {`Sign in with ${provider}`}

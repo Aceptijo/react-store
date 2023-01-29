@@ -24,13 +24,13 @@ const Navigation = () => {
             <div className={styles.phone}>
                 <span className={styles.number}>
                     <PhoneIcon />
-                    +375 (33) 999-88-77
+                    <a href="tel:+74951234567"> +375 (33) 999-88-77</a>
                 </span>
                 <span>9:00-21:00</span>
             </div>
             <div className={styles.user}>
                 <UserIcon />
-                {user ? (
+                {user?.email ? (
                     <NavLink to={'/profile'}>
                         {user.email.slice(0, user.email.indexOf('@'))}
                     </NavLink>

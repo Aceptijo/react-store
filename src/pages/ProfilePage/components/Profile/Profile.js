@@ -22,9 +22,9 @@ const Profile = () => {
                     <div className={styles.general}>
                         <Title>General</Title>
                         <h3>Name</h3>
-                        <span>{splitDisplayName('name')}</span>
+                        <span>{user ? splitDisplayName('name') : ''}</span>
                         <h3>Surname</h3>
-                        <span>{splitDisplayName('surname')}</span>
+                        <span>{user ? splitDisplayName('surname') : ''}</span>
                         <h3>Phone</h3>
                         <span>+375 (33) 323-89-94</span>
                     </div>

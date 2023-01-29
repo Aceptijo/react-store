@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 100px;
+    height: 100vh;
+    font-size: 18px;
+    a {
+        text-decoration: none;
+    }
+}
+
+.title {
+    color: #d1d0c5;
+}
+
+.phone {
+    color: #d29839;
+    a {
+        color: #d1d0c5;
+        margin-left: 10px;
+        transition: 0.2s;
+        &:hover {
+            transition: 0.2s;
+            color: #d29839;
+        }
+    }
+}
+
+.email {
+    color: #d29839;
+    a {
+        color: #d1d0c5;
+        margin-left: 15px;
+        transition: 0.2s;
+        &:hover {
+            transition: 0.2s;
+            color: #d29839;
+        }
+    }
+}
